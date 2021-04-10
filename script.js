@@ -1,4 +1,5 @@
-var currentDayElement=document.getElementById("currentDay")
+var currentDayElement=document.getElementById("currentDay");
+var timeblockElement=document.getElementById(".time-block");
 
 function updateCurrentDay(){
     var currentDayTxt=moment().format('MMMM Do YYYY, h:mm:ss a');
@@ -7,7 +8,7 @@ function updateCurrentDay(){
 setInterval(updateCurrentDay,1000)
 
 function isLater(hour){
-    var currentHour=moment().format('HH');
+    var currentHour=moment().hours();
     if(Number(hour)>Number(currentHour)){
         return "later"
     } else if (Number(hour)<Number(currentHour)){
